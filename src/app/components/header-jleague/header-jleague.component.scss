@@ -94,3 +94,50 @@ a:hover {
 .socials i:hover{
   color: #ffc107;
 }
+
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.animate-navbar {
+  animation: fadeDown 1s ease-out forwards;
+}
+
+.animate-jumbotron {
+  animation: zoomIn 1.2s ease-out forwards;
+}
+
+.animate-socials {
+  animation: fadeUp 1.4s ease-out forwards;
+}
