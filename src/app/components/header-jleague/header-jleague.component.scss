@@ -1,0 +1,96 @@
+.header-container {
+  position: relative;
+  background: url('/assets/tatis.jpg') center/cover no-repeat;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+
+ &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.466);
+    z-index: 0;
+  }
+
+  >* {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+.navbar-brand span {
+  color: white;
+
+}
+
+a {
+  border: none;
+}
+a:hover {
+  background-color: white;
+
+}
+
+.jumbotron {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.header-container .socials-container {
+  align-self: center;
+
+}
+
+.socials-container {
+  width: 95%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  color: white;
+}
+
+
+.scroll {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  color: white;
+}
+
+
+
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.scroll-arrow {
+  display: block;
+  font-size: 1.2rem;
+  color: white;
+  animation: upDown 2s ease-in-out infinite;
+}
+
+.socials-container p{
+  font-size: 1rem;
+}
+
+.socials i:hover{
+  color: #ffc107;
+}
