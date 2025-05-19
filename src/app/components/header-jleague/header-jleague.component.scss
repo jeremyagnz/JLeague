@@ -13,7 +13,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.466);
+    background-color: rgba(0, 0, 0, 0.596);
+   /*   background-color: #ffbf6628; */
     z-index: 0;
   }
 
@@ -23,18 +24,26 @@
   }
 }
 
+.navbar-brand{
+  display: flex;
+  align-items: center;
+}
 
 .navbar-brand span {
   color: white;
+  font-size: 22px;
 
 }
 
+.btn{
+  background-color: #FFBF66;
+}
 a {
   border: none;
 }
 a:hover {
   background-color: white;
-
+  color: black;
 }
 
 .jumbotron {
@@ -91,8 +100,11 @@ a:hover {
   font-size: 1rem;
 }
 
+.socials i{
+  font-size: 20px;
+}
 .socials i:hover{
-  color: #ffc107;
+  color: #FFBF66
 }
 
 

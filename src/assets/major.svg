@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 40 40" viewBox="0 0 40 40" id="trustpilot">
   <switch>
-    <g>
-      <g>
-        <polygon fill="#00b775" points="20 4.8 23.8 16.4 36 16.4 26.1 23.6 29.9 35.2 20 28 10.1 35.2 13.9 23.6 4 16.4 16.2 16.4"></polygon>
-        <polygon fill="#005128" points="26.1 23.6 20 28 26.9 26.1"></polygon>
+    <g fill="#000000" class="color000000 svgShape">
+      <g fill="#000000" class="color000000 svgShape">
+        <polygon fill="#ffbf66" points="20 4.8 23.8 16.4 36 16.4 26.1 23.6 29.9 35.2 20 28 10.1 35.2 13.9 23.6 4 16.4 16.2 16.4" class="color00b775 svgShape"></polygon>
+        <polygon fill="#512f00" points="26.1 23.6 20 28 26.9 26.1" class="color005128 svgShape"></polygon>
       </g>
     </g>
   </switch>
