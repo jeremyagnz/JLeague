@@ -2,3 +2,19 @@
   background-color: rgba(128, 128, 128, 0.137);
 }
 
+
+@keyframes cardIntro {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-intro {
+  animation: cardIntro 0.8s ease-out forwards;
+  opacity: 0; // para evitar parpadeos antes de animar
+}
