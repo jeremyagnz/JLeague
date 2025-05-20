@@ -1,0 +1,45 @@
+.table td, .table th {
+  border: 1px solid rgba(128, 128, 128, 0.322);
+}
+
+.table__tittle {
+  background-color: #FFBF66;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-delay {
+  animation-delay: 0.4s;
+}
+
+.table tbody tr:hover > th,
+.table tbody tr:hover > td {
+  background-color: #ffbf6642;
+  color: rgb(54, 40, 40);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tittle {
+  animation: popIn 0.6s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
