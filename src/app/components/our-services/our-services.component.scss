@@ -1,0 +1,55 @@
+ .main {
+      background-color: black;
+    }
+
+    .tittle{
+      color: white;
+    }
+
+
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      padding-top: 20px;
+      background-color: white;
+      border: none;
+      text-decoration: none !important;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(177, 132, 110, 0.411);
+      background-color: #30271cb4;
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      transition: filter 0.3s ease;
+    }
+
+    .card:hover img {
+      filter: brightness(0) invert(1);
+    }
+
+    .card-title, .card-text {
+      transition: color 0.3s ease;
+    }
+
+
+
+
+    .card:hover .card-text {
+      color: white;
+    }
+
+    .card:hover .card-title{
+
+      color: #FFBF66;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: inherit;
+    }
