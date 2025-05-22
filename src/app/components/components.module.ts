@@ -5,6 +5,7 @@ import { UpcomingEventsComponent } from './upcoming-events/upcoming-events.compo
 import { TableLeagueComponent } from './table-league/table-league.component';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { VideoNewsComponent } from './video-news/video-news.component';
+import { ClientsPartnersComponent } from './clients-partners/clients-partners.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { VideoNewsComponent } from './video-news/video-news.component';
     UpcomingEventsComponent,
     TableLeagueComponent,
     OurServicesComponent,
-    VideoNewsComponent],
+    VideoNewsComponent,
+    ClientsPartnersComponent],
   imports: [
     CommonModule,
   ],
@@ -22,7 +24,8 @@ import { VideoNewsComponent } from './video-news/video-news.component';
     UpcomingEventsComponent,
     TableLeagueComponent,
     OurServicesComponent,
-    VideoNewsComponent
+    VideoNewsComponent,
+    ClientsPartnersComponent
   ]
 })
 export class ComponentsModule { }
