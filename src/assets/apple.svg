@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 40 40" viewBox="0 0 40 40" id="apple">
+  <switch>
+    <g fill="#c4cdd0" class="color000000 svgShape">
+      <path fill-rule="evenodd" d="M21.3,6.6C23.3,4,26,4,26,4s0.4,2.5-1.5,4.8C22.4,11.4,20,11,20,11S19.6,9,21.3,6.6z M14.7,12.1
+			C11,12.1,7,15.4,7,21.7C7,28.1,11.7,36,15.4,36c1.3,0,3.3-1.3,5.3-1.3c2,0,3.4,1.2,5.3,1.2c4.1,0,7.1-8.4,7.1-8.4
+			s-4.3-1.6-4.3-6.4c0-4.2,3.4-6,3.4-6S30.4,12,25.9,12c-2.6,0-4.6,1.5-5.7,1.5C19,13.5,17.1,12.1,14.7,12.1z" clip-rule="evenodd" fill="#c4cdd0" class="color000000 svgShape"></path>
+    </g>
+  </switch>
+</svg>
