@@ -6,6 +6,7 @@ import { TableLeagueComponent } from './table-league/table-league.component';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { VideoNewsComponent } from './video-news/video-news.component';
 import { ClientsPartnersComponent } from './clients-partners/clients-partners.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ClientsPartnersComponent } from './clients-partners/clients-partners.co
     TableLeagueComponent,
     OurServicesComponent,
     VideoNewsComponent,
-    ClientsPartnersComponent],
+    ClientsPartnersComponent,
+    FooterComponent],
   imports: [
     CommonModule,
   ],
@@ -25,7 +27,8 @@ import { ClientsPartnersComponent } from './clients-partners/clients-partners.co
     TableLeagueComponent,
     OurServicesComponent,
     VideoNewsComponent,
-    ClientsPartnersComponent
+    ClientsPartnersComponent,
+    FooterComponent
   ]
 })
 export class ComponentsModule { }
