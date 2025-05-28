@@ -1,43 +1,15 @@
-.header-container {
-  position: relative;
-  background: url('/assets/tatis.jpg') center/cover no-repeat;
-  min-height: 100vh;
-  height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  font-weight: 600;
-  padding: 1rem;
-  padding-top: 160px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 0;
-  }
-
-  >* {
-    position: relative;
-    z-index: 1;
-  }
-}
-
-.center-jumbotron {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .navbar {
   background-color: transparent !important;
   transition: background-color 0.3s ease-in-out;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1050;
+
+  &.bg-dark {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+  }
 
   .navbar-brand {
     display: flex;
@@ -53,14 +25,39 @@
     background-color: transparent !important;
     border: none !important;
     box-shadow: none !important;
+    cursor: pointer;
+    display: block;
+
+    &-icon {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFBF66' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      width: 30px;
+      height: 22px;
+      display: block;
+    }
+
+    @media (min-width: 992px) {
+      display: none;
+    }
   }
 
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFBF66' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  .navbar-nav {
+    display: none;
+
+    @media (min-width: 992px) {
+      display: flex !important;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 0;
+
+      li.nav-item {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .nav-link {
     color: white !important;
+    font-size: 1rem;
 
     &:hover {
       color: #FFBF66 !important;
@@ -70,14 +67,12 @@
       color: rgba(255, 255, 255, 0.5) !important;
     }
   }
-
-  .navbar-toggler {
-    background-color: white;
-  }
 }
 
-.bg-dark {
-  background-color: rgba(0, 0, 0, 0.8) !important;
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .scroll-top-btn {
@@ -110,6 +105,121 @@
     background-color: white;
     color: #FFBF66;
   }
+
+  &.hide {
+    display: none !important;
+  }
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 320px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 1.5rem;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.7);
+  transition: right 0.3s ease;
+  z-index: 1100;
+  overflow-y: auto;
+
+  &.sidenav-open {
+    right: 0;
+    width: 100vw;
+  }
+
+  @media (min-width: 992px) {
+    display: none !important;
+  }
+
+  .btn-close {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    padding: 0;
+    line-height: 1;
+  }
+
+  ul.navbar-nav {
+    padding-left: 0;
+
+    li.nav-item {
+      margin-bottom: 1rem;
+
+      a.nav-link {
+        color: white !important;
+        font-size: 1.1rem;
+
+        &:hover {
+          color: #FFBF66 !important;
+        }
+      }
+    }
+  }
+
+  form.d-flex {
+    margin-top: 2rem;
+
+    input.form-control {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    button.btn-outline-light {
+      border-color: #FFBF66;
+      color: #FFBF66;
+
+      &:hover {
+        background-color: #FFBF66;
+        color: black;
+        border-color: #FFBF66;
+      }
+    }
+  }
+}
+
+.header-container {
+  position: relative;
+  background: url('/assets/tatis.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  padding-top: 160px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.center-jumbotron {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .jumbotron {
@@ -140,7 +250,6 @@
     color: white;
 
     .scroll-arrow {
-      display: block;
       font-size: 1.2rem;
       color: white;
       animation: upDown 2s ease-in-out infinite;
@@ -167,12 +276,36 @@
   }
 }
 
+.socials-form {
+  width: 25%;
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+
+  i {
+    font-size: 20px;
+    color: white;
+
+    &:hover {
+      color: #FFBF66;
+    }
+  }
+}
+
+.menu-logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  margin-top: 30px;
+  color: #FFBF66;
+}
+
 @keyframes upDown {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(10px);
   }
@@ -183,7 +316,6 @@
     opacity: 0;
     transform: translateY(-30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -195,7 +327,6 @@
     opacity: 0;
     transform: scale(0.9);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
@@ -207,7 +338,6 @@
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
