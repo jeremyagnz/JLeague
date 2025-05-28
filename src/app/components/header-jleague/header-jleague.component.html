@@ -1,43 +1,100 @@
-<button id="scrollTopBtn" class="scroll-top-btn" title="Volver arriba" (click)="scrollToTop()">↑</button>
-
-<nav class="navbar navbar-expand-lg fixed-top animate-navbar">
+<nav
+  class="navbar fixed-top navbar-expand-lg navbar-light animate-navbar"
+  [class.bg-dark]="isNavbarDark"
+>
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#">
-      <img src="/assets/major.svg" width="40" height="40" class="me-2" alt="Logo">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/major.svg" width="40" height="40" class="me-2" alt="Logo" />
       <span>JLeague</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button
+      class="navbar-toggler d-lg-none"
+      type="button"
+      (click)="toggleSidenav()"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarContent">
+    <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#">Link</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >Dropdown</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link text-secondary disabled" href="#">Disabled</a></li>
+        <li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a></li>
       </ul>
 
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
 
-<div class="header-container">
+<div class="sidenav" [class.sidenav-open]="isSidenavOpen">
+  <div class="menu-logo text-center">
+    <img src="/assets/major.svg" width="40" height="40" class="me-2" alt="Logo" />
+    <button class="btn-close" (click)="toggleSidenav()">×</button>
+  </div>
 
+  <ul class="navbar-nav text-center">
+    <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+    <li class="nav-item"><a class="nav-link text-white" href="#">Link</a></li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle text-white"
+        href="#"
+        id="navbarDropdownMobile"
+        role="button"
+        (click)="toggleDropdown()"
+        [attr.aria-expanded]="isDropdownOpen"
+      >Dropdown</a>
+      <ul class="dropdown-menu" [class.show]="isDropdownOpen" aria-labelledby="navbarDropdownMobile">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </li>
+    <li class="nav-item"><a class="nav-link text-secondary disabled" href="#">Disabled</a></li>
+  </ul>
+
+  <form class="d-flex mt-3">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+    <button class="btn btn-outline-light" type="submit">Search</button>
+  </form>
+
+  <hr class="divider" />
+
+  <div class="socials-form text-center">
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-linkedin-in"></i>
+    <i class="fab fa-whatsapp"></i>
+  </div>
+</div>
+
+<button id="scrollTopBtn" class="scroll-top-btn" (click)="scrollToTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<div class="header-container">
   <div class="center-jumbotron">
     <div class="jumbotron w-75 mx-auto animate-jumbotron">
       <p>JLeague</p>
