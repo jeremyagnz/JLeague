@@ -44,8 +44,15 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+
+      <div class="ms-3 d-flex align-items-center gap-2">
+  <a class="btn btn-outline-light" href="/login">Login</a>
+  <a class="btn btn-light text-dark" href="/register">Registrar</a>
+</div>
+
     </div>
   </div>
+
 </nav>
 
 <div class="sidenav" [class.sidenav-open]="isSidenavOpen">
@@ -73,13 +80,19 @@
         <li><a class="dropdown-item" href="#">Something else here</a></li>
       </ul>
     </li>
-    <li class="nav-item"><a class="nav-link text-secondary disabled" href="#">Disabled</a></li>
   </ul>
 
   <form class="d-flex mt-3">
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
     <button class="btn btn-outline-light" type="submit">Search</button>
   </form>
+
+  <!-- 🔐 Login & Registrar buttons for mobile -->
+<div class="d-grid gap-2 mt-3">
+  <a class="btn btn-outline-light" href="/login">Login</a>
+  <a class="btn btn-light text-dark" href="/register">Registrar</a>
+</div>
+
 
   <hr class="divider" />
 

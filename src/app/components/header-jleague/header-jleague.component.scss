@@ -356,3 +356,25 @@
 .animate-socials {
   animation: fadeUp 1.4s ease-out forwards;
 }
+
+
+.btn-outline-light {
+  border-color: #FFBF66;
+  color: #FFBF66;
+
+  &:hover {
+    background-color: #FFBF66;
+    color: black;
+  }
+}
+
+.btn-light {
+  background-color: #FFBF66;
+  border-color: #FFBF66;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+  }
+}

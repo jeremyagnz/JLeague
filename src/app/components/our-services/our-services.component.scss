@@ -1,52 +1,70 @@
+.services-container {
+  background-color: rgba(0, 0, 0, 0.85);
+}
 
-    .tittle{
-      color: white;
-    }
+.tittle {
+  color: white;
+}
 
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: white;
+  border: none;
+  padding-top: 20px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-      padding-top: 20px;
-      background-color: white;
-      border: none;
-      text-decoration: none !important;
-      color: inherit;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 191, 102, 0.15),
+      rgba(0, 0, 0, 0.3)
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(177, 132, 110, 0.411);
-      background-color: #30271cb4;
-    }
+  img,
+  .card-body,
+  .card-title,
+  .card-text {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease, filter 0.4s ease, color 0.4s ease;
+  }
 
-    .card img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 15px;
-      transition: filter 0.3s ease;
-    }
+  img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+}
 
-    .card:hover img {
-      filter: brightness(0) invert(1);
-    }
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 
-    .card-title, .card-text {
-      transition: color 0.3s ease;
-    }
+  &::before {
+    opacity: 1;
+  }
 
+  img {
+    transform: scale(1.08);
+    filter: none;
+  }
 
+  .card-title {
+    color: #FFBF66;
+  }
 
-
-    .card:hover .card-text {
-      color: white;
-    }
-
-    .card:hover .card-title{
-
-      color: #FFBF66;
-    }
-
-    .card a {
-      text-decoration: none;
-      color: inherit;
-    }
+  .card-text {
+    color: black;
+  }
+}
