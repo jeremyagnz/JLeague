@@ -7,6 +7,7 @@ import { OurServicesComponent } from './our-services/our-services.component';
 import { VideoNewsComponent } from './video-news/video-news.component';
 import { ClientsPartnersComponent } from './clients-partners/clients-partners.component';
 import { FooterComponent } from './footer/footer.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent],
   imports: [
     CommonModule,
+    RouterModule
   ],
   exports: [
     HeaderJleagueComponent,

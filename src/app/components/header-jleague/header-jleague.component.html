@@ -87,10 +87,9 @@
     <button class="btn btn-outline-light" type="submit">Search</button>
   </form>
 
-  <!-- 🔐 Login & Registrar buttons for mobile -->
 <div class="d-grid gap-2 mt-3">
-  <a class="btn btn-outline-light" href="/login">Login</a>
-  <a class="btn btn-light text-dark" href="/register">Registrar</a>
+  <a class="btn btn-outline-light" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
+  <a class="btn btn-light text-dark" [routerLink]="['/register']" routerLinkActive="router-link-active" >Registrar</a>
 </div>
 
 
