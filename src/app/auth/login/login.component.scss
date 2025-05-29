@@ -1,11 +1,23 @@
-
+/* Animaciones */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .animate-fade-in {
@@ -15,10 +27,12 @@
   animation: slideInLeft 1s ease-out;
 }
 
+/* Colores y estilos de la sección */
 .login-section {
   background-color: #f8f5f0;
 }
 
+/* Formularios */
 .login-section .form-label {
   color: #30271c;
 }
@@ -28,6 +42,7 @@
   border: 1px solid #ccc;
 }
 
+/* Botón */
 .login-section .btn-warning {
   background-color: #f0b94a;
   transition: background-color 0.3s ease;
@@ -36,7 +51,7 @@
   background-color: #e0a84b;
 }
 
-
+/* Divider estilo */
 .divider::before,
 .divider::after {
   content: "";
@@ -45,12 +60,25 @@
   background: #30271c;
 }
 
-
+/* Altura personalizada */
 .h-custom {
   height: calc(100% - 73px);
 }
 @media (max-width: 450px) {
   .h-custom {
     height: 100%;
+  }
+}
+
+/* Imagen con tamaños variables según viewport */
+#loginImage {
+  max-height: 220px;
+  object-fit: contain;
+  transition: max-height 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  #loginImage {
+    max-height: 400px;
   }
 }
