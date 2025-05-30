@@ -28,9 +28,9 @@ export class AuthService {
 }
 
 
-  register(data: { username: string; email: string; password: string }): Observable<User> {
-    return this.http.post<User>(`${this.apiUrl}/register`, data);
-  }
+register(data: { username: string; email: string; password: string }): Observable<User> {
+  return this.http.post<User>(`${this.apiUrl}/users`, data);
+}
 
   logout() {
     localStorage.removeItem('user');
