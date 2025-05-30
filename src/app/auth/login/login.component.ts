@@ -10,20 +10,24 @@ import { AuthService } from '../../core/services/auth.service';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  loading: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
-login() {
-  this.authService.login({ email: this.email, password: this.password }).subscribe({
-    next: (user) => {
-      if (user) {
-        localStorage.setItem('user', JSON.stringify(user));
-        this.router.navigate(['/dashboard']);
+  login() {
+    this.loading = true;
+    this.authService.login({ email: this.email, password: this.password }).subscribe({
+      next: (user) => {
+        this.loading = false;
+        if (user) {
+          localStorage.setItem('user', JSON.stringify(user));
+          this.router.navigate(['/dashboard']);
+        }
+      },
+      error: () => {
+        this.loading = false;
+        alert('Credenciales inválidas');
       }
-    },
-    error: () => {
-      alert('Credenciales inválidas');
-    }
-  });
-}
+    });
+  }
 }

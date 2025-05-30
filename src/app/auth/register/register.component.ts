@@ -11,6 +11,7 @@ export class RegisterComponent {
   username = '';
   email = '';
   password = '';
+  loading = false; // Indicador de carga
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -20,17 +21,21 @@ export class RegisterComponent {
       return;
     }
 
+    this.loading = true;
+
     this.authService.register({
       username: this.username,
       email: this.email,
       password: this.password
     }).subscribe({
       next: (user) => {
+        this.loading = false;
         alert('Usuario registrado con éxito');
         localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/dashboard']);
       },
       error: (err) => {
+        this.loading = false;
         console.error(err);
         alert('Error al registrar usuario');
       }

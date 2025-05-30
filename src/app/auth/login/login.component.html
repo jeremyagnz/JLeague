@@ -82,20 +82,26 @@
             <a href="#" class="text-muted">¿Olvidaste tu contraseña?</a>
           </div>
 
-          <!-- Botón iniciar sesión -->
-          <div class="text-center text-md-start">
-            <button
-              type="submit"
-              class="btn btn-warning btn-sm text-dark px-4 py-2"
-              style="font-size: 1rem;"
-            >
-              Iniciar sesión
-            </button>
-            <p class="small fw-bold mt-2 mb-0" style="font-size: 0.85rem;">
-              ¿No tienes cuenta?
-              <a [routerLink]="['/register']" class="text-danger">Regístrate</a>
-            </p>
-          </div>
+         <!-- Botón iniciar sesión -->
+<div class="text-center text-md-start">
+  <button
+    type="submit"
+    class="btn btn-warning btn-sm text-dark px-4 py-2"
+    style="font-size: 1rem;"
+    [disabled]="loading"
+  >
+    <ng-container *ngIf="!loading">Iniciar sesión</ng-container>
+    <ng-container *ngIf="loading">
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Cargando...
+    </ng-container>
+  </button>
+  <p class="small fw-bold mt-2 mb-0" style="font-size: 0.85rem;">
+    ¿No tienes cuenta?
+    <a [routerLink]="['/register']" class="text-danger">Regístrate</a>
+  </p>
+</div>
+
         </form>
       </div>
     </div>

@@ -29,10 +29,24 @@
     <label class="form-label" for="form3Example4">Password</label>
   </div>
 
-  <div class="d-grid gap-2 mb-4">
-    <button type="submit" class="btn btn-primary btn-block">Sign up</button>
-    <button type="button" class="btn btn-outline-primary btn-block" (click)="goToLogin()">Sign in</button>
-  </div>
+ <div class="d-grid gap-2 mb-4">
+  <button
+    type="submit"
+    class="btn btn-primary btn-block"
+    [disabled]="loading"
+  >
+    <ng-container *ngIf="!loading">Sign up</ng-container>
+    <ng-container *ngIf="loading">
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Registrando...
+    </ng-container>
+  </button>
+
+  <button type="button" class="btn btn-outline-primary btn-block" (click)="goToLogin()" [disabled]="loading">
+    Sign in
+  </button>
+</div>
+
 </form>
 
         </div>
