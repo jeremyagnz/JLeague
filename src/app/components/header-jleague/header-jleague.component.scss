@@ -378,3 +378,17 @@
     border-color: white;
   }
 }
+
+
+.socials-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.divider {
+  width: 80%;
+  margin: 2rem auto;
+  border-color: #fff;
+}
