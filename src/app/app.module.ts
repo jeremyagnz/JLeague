@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { JLeagueComponent } from './jleague/jleague.component';
 import { HeaderJleagueComponent } from './components/header-jleague/header-jleague.component';
 import { JleagueModule } from './jleague/jleague.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { JleagueModule } from './jleague/jleague.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    JleagueModule
+    JleagueModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
