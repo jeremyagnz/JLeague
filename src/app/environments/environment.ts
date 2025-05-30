@@ -1,3 +1,4 @@
 export const environment = {
-  apiUrl: 'http://localhost:3000'
+  production: false,
+  apiUrl: 'https://db-jleague-mock.onrender.com'
 };
