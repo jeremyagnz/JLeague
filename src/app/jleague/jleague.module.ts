@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JLeagueComponent } from './jleague.component';
-import { ComponentsModule } from '../components/components.module';
 import { AuthModule } from '../auth/auth.module';
 import { HeaderJleagueComponent } from '../components/header-jleague/header-jleague.component';
 import { ClientsPartnersComponent } from '../components/clients-partners/clients-partners.component';
@@ -17,7 +16,6 @@ import { VideoNewsComponent } from '../components/video-news/video-news.componen
   declarations: [JLeagueComponent],
   imports: [
     CommonModule,
-    ComponentsModule,
     AuthModule,
     HeaderJleagueComponent,
     ClientsPartnersComponent,
