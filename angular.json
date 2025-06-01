@@ -15,9 +15,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/jleague",
+            "outputPath": {
+              "base": "dist/jleague"
+            },
             "index": "src/index.html",
             "polyfills": [
               "zone.js"
