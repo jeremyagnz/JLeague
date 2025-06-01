@@ -16,8 +16,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule,
-    RouterModule.forChild(routes)],// Necesario si usas routerLink o rutas hijas
+    RouterModule.forChild(routes)],
 
-  exports: [DashboardComponent] // opcional
+  exports: [DashboardComponent]
 })
 export class DashboardModule {}

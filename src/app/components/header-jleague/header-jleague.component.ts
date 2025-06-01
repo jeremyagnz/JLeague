@@ -1,9 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header-jleague',
   templateUrl: './header-jleague.component.html',
-  styleUrls: ['./header-jleague.component.scss']
+  styleUrls: ['./header-jleague.component.scss'],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
 })
 export class HeaderJleagueComponent {
   showScrollTopBtn = false;
