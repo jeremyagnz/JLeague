@@ -12,7 +12,7 @@ export class RegisterComponent {
   username = '';
   email = '';
   password = '';
-  loading = false; // Indicador de carga
+  loading = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
