@@ -1,10 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-upcoming-events',
     templateUrl: './upcoming-events.component.html',
     styleUrls: ['./upcoming-events.component.scss'],
-    standalone: false
+     standalone: true,
+  imports: [CommonModule, RouterModule],
 })
 export class UpcomingEventsComponent {
 

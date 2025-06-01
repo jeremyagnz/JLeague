@@ -11,26 +11,12 @@ import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [
-    HeaderJleagueComponent,
-    UpcomingEventsComponent,
-    TableLeagueComponent,
-    OurServicesComponent,
-    VideoNewsComponent,
-    ClientsPartnersComponent,
-    FooterComponent],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    HeaderJleagueComponent,
-    UpcomingEventsComponent,
-    TableLeagueComponent,
-    OurServicesComponent,
-    VideoNewsComponent,
-    ClientsPartnersComponent,
-    FooterComponent
   ]
 })
 export class ComponentsModule { }
