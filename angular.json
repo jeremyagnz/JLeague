@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "JLeague:build:production"
+              "buildTarget": "JLeague:build:production"
             },
             "development": {
-              "browserTarget": "JLeague:build:development"
+              "buildTarget": "JLeague:build:development"
             }
           },
           "defaultConfiguration": "development"
