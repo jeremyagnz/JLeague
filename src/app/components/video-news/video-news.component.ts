@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-video-news',
-  templateUrl: './video-news.component.html',
-  styleUrls: ['./video-news.component.scss']
+    selector: 'app-video-news',
+    templateUrl: './video-news.component.html',
+    styleUrls: ['./video-news.component.scss'],
+    standalone: false
 })
 export class VideoNewsComponent {
 

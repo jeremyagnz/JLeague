@@ -1,9 +1,10 @@
 import { Component, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-header-jleague',
-  templateUrl: './header-jleague.component.html',
-  styleUrls: ['./header-jleague.component.scss']
+    selector: 'app-header-jleague',
+    templateUrl: './header-jleague.component.html',
+    styleUrls: ['./header-jleague.component.scss'],
+    standalone: false
 })
 export class HeaderJleagueComponent {
   showScrollTopBtn = false;

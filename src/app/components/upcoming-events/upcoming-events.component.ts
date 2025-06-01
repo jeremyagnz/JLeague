@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-upcoming-events',
-  templateUrl: './upcoming-events.component.html',
-  styleUrls: ['./upcoming-events.component.scss']
+    selector: 'app-upcoming-events',
+    templateUrl: './upcoming-events.component.html',
+    styleUrls: ['./upcoming-events.component.scss'],
+    standalone: false
 })
 export class UpcomingEventsComponent {
 
