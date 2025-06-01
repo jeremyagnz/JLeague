@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { JLeagueComponent } from './jleague/jleague.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { authGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
