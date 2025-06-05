@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AsideBarComponent } from '../shared/components/aside-bar/aside-bar.component';
-import { MisTorneosComponent } from '../shared/components/Mis Torneos/mis-torneos.component';
-import { JugadoresComponent } from '../shared/components/jugadores/jugadores.component';
-import { EquiposComponent } from '../shared/components/equipos/equipos.component';
 import { SettingsComponent } from '../shared/components/settings/settings.component';
-import { MiEquipoComponent } from '../shared/components/mi-equipo/mi-equipo.component';
+import { TeamsComponent } from '../shared/components/teams/teams.component';
+import { PlayersComponent } from '../shared/components/players/players.component';
+import { MyTournamentsComponent } from '../shared/components/my-tournaments/my-tournaments.component';
+import { MyTeamComponent } from '../shared/components/my-team/my-team.component';
 
 const routes: Routes = [
   {
@@ -15,20 +15,20 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
-        path: 'mis-torneos',
-        component: MisTorneosComponent,
+        path: 'my-tournaments',
+        component: MyTournamentsComponent,
       },
       {
-        path: 'jugadores',
-        component: JugadoresComponent,
+        path: 'players',
+        component: PlayersComponent,
       },
       {
-        path: 'equipos',
-        component: EquiposComponent,
+        path: 'teams',
+        component: TeamsComponent,
       },
       {
-        path: 'mi-equipo',
-        component: MiEquipoComponent,
+        path: 'my-team',
+        component: MyTeamComponent,
       },
       {
         path: 'settings',
