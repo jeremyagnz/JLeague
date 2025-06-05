@@ -17,22 +17,27 @@ const routes: Routes = [
       {
         path: 'my-tournaments',
         component: MyTournamentsComponent,
+        data: { titulo: 'Mis Torneos' },
       },
       {
         path: 'players',
         component: PlayersComponent,
+        data: { titulo: 'Jugadores' },
       },
       {
         path: 'teams',
         component: TeamsComponent,
+        data: { titulo: 'Equipos' },
       },
       {
         path: 'my-team',
         component: MyTeamComponent,
+        data: { titulo: 'Mi Equipo' },
       },
       {
         path: 'settings',
         component: SettingsComponent,
+        data: { titulo: 'Configuración' },
       },
     ],
   },
