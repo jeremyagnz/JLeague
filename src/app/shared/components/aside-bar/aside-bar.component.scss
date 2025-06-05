@@ -1,9 +1,4 @@
-.container {
-  height: 100vh;
-  border: 1px solid red;
-  width: 30vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.nav-link.active {
+  background-color: #0d6efd !important;
+  color: white !important;
 }

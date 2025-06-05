@@ -1,29 +1,52 @@
-<div class="container">
-  <p>aside-bar works!</p>
-
-  <ul>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/dashboard']">My Dashboard</a>
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light shadow-sm hh" style="width: 250px; min-height: 100vh;">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+    <span class="fs-4 text-center">Dashboard</span>
+  </a>
+  <hr>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link link-dark">
+        <i class="bi bi-speedometer2 me-2"></i> My Dashboard
+      </a>
     </li>
-
-    <li routerLinkActive="active">
-      <a [routerLink]="['/dashboard/my-tournaments']">My Tournaments</a>
+    <li>
+      <a [routerLink]="['/dashboard/my-tournaments']" routerLinkActive="active" class="nav-link link-dark">
+        <i class="bi bi-trophy me-2"></i> My Tournaments
+      </a>
     </li>
-
-    <li routerLinkActive="active">
-      <a [routerLink]="['/dashboard/players']">Players</a>
+    <li>
+      <a [routerLink]="['/dashboard/players']" routerLinkActive="active" class="nav-link link-dark">
+        <i class="bi bi-people me-2"></i> Players
+      </a>
     </li>
-
-    <li routerLinkActive="active">
-      <a [routerLink]="['/dashboard/teams']">Teams</a>
+    <li>
+      <a [routerLink]="['/dashboard/teams']" routerLinkActive="active" class="nav-link link-dark">
+        <i class="bi bi-shield-check me-2"></i> Teams
+      </a>
     </li>
-
-    <li routerLinkActive="active">
-      <a [routerLink]="['/dashboard/my-team']">My Team</a>
+    <li>
+      <a [routerLink]="['/dashboard/my-team']" routerLinkActive="active" class="nav-link link-dark">
+        <i class="bi bi-person-badge me-2"></i> My Team
+      </a>
     </li>
-
-    <li routerLinkActive="active">
-      <a [routerLink]="['/dashboard/settings']">Settings</a>
+    <li>
+      <a [routerLink]="['/dashboard/settings']" routerLinkActive="active" class="nav-link link-dark">
+        <i class="bi bi-gear me-2"></i> Settings
+      </a>
     </li>
   </ul>
+  <hr>
+  <div class="dropdown">
+    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+      <img src="https://via.placeholder.com/32" alt="" class="rounded-circle me-2">
+      <strong>{{ username | titlecase }}</strong>
+    </a>
+    <ul class="dropdown-menu shadow">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li>
+        <button class="dropdown-item" (click)="logout()">Sign out</button>
+      </li>
+    </ul>
+  </div>
 </div>
