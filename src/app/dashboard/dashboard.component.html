@@ -1,11 +1,18 @@
-<div class="container">
-  <div class="dashboard-container">
-  <h1>Bienvenido, {{ username }}</h1>
+<div class="dashboard-container">
+  <app-aside-bar></app-aside-bar>
 
 
-  <button class="btn btn-danger btn-sm" (click)="logout()">
-    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
-  </button>
-</div>
+  <div class="container">
+    <div class="dashboard-container">
+      <h1>Bienvenido, {{ username }}</h1>
 
+
+      <button class="btn btn-danger btn-sm" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+      </button>
+    </div>
+
+  </div>
+
+  <router-outlet></router-outlet>
 </div>
