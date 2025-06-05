@@ -6,13 +6,14 @@ import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-aside-bar',
+  standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './aside-bar.component.html',
-  styleUrl: './aside-bar.component.scss',
-  standalone: true,
+  styleUrls: ['./aside-bar.component.scss'],
 })
 export class AsideBarComponent implements OnInit {
-  username: string | undefined;
+  username?: string;
+  isSidenavOpen = false;
 
   constructor(
     private userService: UserService,
@@ -21,10 +22,6 @@ export class AsideBarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getUserData();
-  }
-
-  getUserData() {
     this.userService.user$.subscribe((user) => {
       this.username = user?.username;
     });
@@ -33,5 +30,9 @@ export class AsideBarComponent implements OnInit {
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  toggleSidenav(): void {
+    this.isSidenavOpen = !this.isSidenavOpen;
   }
 }
