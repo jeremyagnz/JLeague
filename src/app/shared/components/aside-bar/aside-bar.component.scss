@@ -6,7 +6,7 @@
   width: 250px;
   transition: left 0.3s ease-in-out;
   z-index: 1050;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .sidenav.sidenav-open {
