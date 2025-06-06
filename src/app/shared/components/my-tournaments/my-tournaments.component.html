@@ -1,1 +1,152 @@
-<p>mis-torneos works!</p>
+<div class="container mt-4">
+  <div class="d-flex justify-content-center mb-3">
+    <button class="btn btn-primary" (click)="openModal()">Agregar Torneo</button>
+  </div>
+
+  <div class="row justify-content-center mb-4" *ngIf="tournaments.length">
+    <div class="col-md-6 mb-4" *ngFor="let tournament of tournaments">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ tournament.name }}</h5>
+          <p class="card-text">
+            <strong>Lugar:</strong> {{ tournament.location }}<br />
+            <strong>Fechas:</strong> {{ tournament.dateStart }} - {{ tournament.dateEnd }}<br />
+            <strong>Estado:</strong> {{ tournament.status }}<br />
+            <strong>Equipos:</strong> {{ tournament.teams }}<br />
+            <strong>Premio:</strong> RD$ {{ tournament.prizePool | number }}<br />
+          </p>
+          <p class="card-text"><em>{{ tournament.description }}</em></p>
+          <hr />
+          <p><strong>Organizador:</strong> {{ tournament.organizer.name }}</p>
+          <p><strong>Contacto:</strong> {{ tournament.organizer.contact }}</p>
+
+          <div class="d-flex justify-content-end gap-2 mt-3">
+            <button class="btn btn-sm btn-primary" (click)="onEditTournament(tournament)">Editar</button>
+            <button class="btn btn-sm btn-danger" (click)="onDeleteTournament(tournament.id)">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!tournaments.length" class="text-center mt-5">
+    <p>Cargando torneos...</p>
+  </div>
+
+
+  <div class="modal fade" [class.show]="modalVisible" [style.display]="modalVisible ? 'block' : 'none'" tabindex="-1"
+    role="dialog" aria-hidden="true" (click)="closeModal()">
+    <div class="modal-dialog modal-lg" role="document" (click)="$event.stopPropagation()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{ isEditMode ? 'Editar Torneo' : 'Agregar Nuevo Torneo' }}</h5>
+          <button type="button" class="btn-close" aria-label="Cerrar" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="tournamentForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" id="name" formControlName="name" class="form-control" [class.is-invalid]="
+                  tournamentForm.get('name')?.invalid && tournamentForm.get('name')?.touched
+                " />
+                <div class="invalid-feedback">El nombre es obligatorio.</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="location" class="form-label">Lugar</label>
+                <input type="text" id="location" formControlName="location" class="form-control" [class.is-invalid]="
+                  tournamentForm.get('location')?.invalid &&
+                  tournamentForm.get('location')?.touched
+                " />
+                <div class="invalid-feedback">El lugar es obligatorio.</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="dateStart" class="form-label">Fecha Inicio</label>
+                <input type="date" id="dateStart" formControlName="dateStart" class="form-control" [class.is-invalid]="
+                  tournamentForm.get('dateStart')?.invalid &&
+                  tournamentForm.get('dateStart')?.touched
+                " />
+                <div class="invalid-feedback">La fecha de inicio es obligatoria.</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="dateEnd" class="form-label">Fecha Fin</label>
+                <input type="date" id="dateEnd" formControlName="dateEnd" class="form-control" [class.is-invalid]="
+                  tournamentForm.get('dateEnd')?.invalid && tournamentForm.get('dateEnd')?.touched
+                " />
+                <div class="invalid-feedback">La fecha de fin es obligatoria.</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="teams" class="form-label">Equipos</label>
+                <input type="number" id="teams" formControlName="teams" class="form-control" [class.is-invalid]="
+                  tournamentForm.get('teams')?.invalid && tournamentForm.get('teams')?.touched
+                " />
+                <div class="invalid-feedback">El número de equipos es obligatorio.</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="matches" class="form-label">Partidos</label>
+                <input type="number" id="matches" formControlName="matches" class="form-control" [class.is-invalid]="
+                  tournamentForm.get('matches')?.invalid && tournamentForm.get('matches')?.touched
+                " />
+                <div class="invalid-feedback">El número de partidos es obligatorio.</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="prizePool" class="form-label">Premio (RD$)</label>
+                <input type="number" id="prizePool" formControlName="prizePool" class="form-control" [class.is-invalid]="
+                  tournamentForm.get('prizePool')?.invalid &&
+                  tournamentForm.get('prizePool')?.touched
+                " />
+                <div class="invalid-feedback">El premio es obligatorio.</div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="sponsor" class="form-label">Patrocinador</label>
+                <input type="text" id="sponsor" formControlName="sponsor" class="form-control" />
+              </div>
+
+              <div class="col-12 mb-3">
+                <label for="description" class="form-label">Descripción</label>
+                <textarea id="description" formControlName="description" rows="3" class="form-control"></textarea>
+              </div>
+
+              <div formArrayName="categories" class="col-12 mb-3">
+                <label class="form-label">Categorías</label>
+                <div *ngFor="let cat of categories.controls; let i = index" class="d-flex align-items-center mb-2">
+                  <input [formControlName]="i" class="form-control me-2" />
+                  <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeCategory(i)"
+                    [disabled]="categories.length === 1">
+                    Eliminar
+                  </button>
+                </div>
+                <button type="button" class="btn btn-outline-primary btn-sm" (click)="addCategory()">
+                  Agregar Categoría
+                </button>
+              </div>
+
+              <div formGroupName="organizer" class="col-12 mb-3">
+                <label class="form-label">Organizador</label>
+                <input type="text" formControlName="name" placeholder="Nombre" class="form-control mb-2" />
+                <input type="email" formControlName="email" placeholder="Email" class="form-control" />
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success" [disabled]="tournamentForm.invalid">
+                {{ isEditMode ? 'Guardar Cambios' : 'Agregar Torneo' }}
+              </button>
+              <button type="button" class="btn btn-secondary" (click)="closeModal()">
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
