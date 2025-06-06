@@ -25,12 +25,13 @@
 
 @media (min-width: 768px) {
   .sidenav {
+    position: relative !important;
     left: 0 !important;
-    position: fixed;
+    height: 100vh;
   }
 
-  .sidenav-backdrop {
-    display: none !important;
+  .dashboard-container {
+    display: flex;
   }
 }
 
