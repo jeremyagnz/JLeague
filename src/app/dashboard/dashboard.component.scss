@@ -2,8 +2,10 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
+/* main-content ocupa todo el espacio disponible */
 .main-content {
   flex: 1;
   display: flex;
@@ -11,4 +13,20 @@
   padding: 1rem;
   overflow-y: auto;
   align-items: center;
+}
+
+/* En mobile (menos de 768px) el sidebar estará oculto y ocupará toda la pantalla al abrirse */
+/* Para esto el sidebar ya está manejado con la clase sidenav y su lógica */
+
+@media (max-width: 767.98px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    overflow-y: auto;
+  }
 }
