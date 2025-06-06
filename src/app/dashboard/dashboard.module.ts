@@ -15,11 +15,6 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       {
-        path: '',
-        redirectTo: 'my-tournaments',
-        pathMatch: 'full',
-      },
-      {
         path: 'my-tournaments',
         component: MyTournamentsComponent,
         data: { titulo: 'Mis Torneos' },
