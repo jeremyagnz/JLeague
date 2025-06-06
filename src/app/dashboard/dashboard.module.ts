@@ -8,12 +8,25 @@ import { TeamsComponent } from '../shared/components/teams/teams.component';
 import { PlayersComponent } from '../shared/components/players/players.component';
 import { MyTournamentsComponent } from '../shared/components/my-tournaments/my-tournaments.component';
 import { MyTeamComponent } from '../shared/components/my-team/my-team.component';
+import { MyDashboardComponent } from '../shared/components/my-dashboard/my-dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
+
     children: [
+      {
+        path: '',
+        redirectTo: 'my-dashboard',
+        pathMatch: 'full',
+        data: { titulo: 'Mi panel' },
+      },
+      {
+        path: 'my-dashboard',
+        component: MyDashboardComponent,
+        data: { titulo: 'Mi panel' },
+      },
       {
         path: 'my-tournaments',
         component: MyTournamentsComponent,
