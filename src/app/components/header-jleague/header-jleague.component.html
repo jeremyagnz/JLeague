@@ -33,9 +33,8 @@
       </form>
 
       <div class="ms-3 d-flex align-items-center gap-2">
-        <a class="btn btn-light text-dark" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
-        <a class="btn btn-light text-dark" [routerLink]="['/register']"
-          routerLinkActive="router-link-active">Registrar</a>
+        <a class="btn btn-light " [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+        <a class="btn btn-light" [routerLink]="['/register']" routerLinkActive="router-link-active">Registrar</a>
       </div>
 
     </div>
@@ -87,16 +86,15 @@
 <div class="header-container">
   <div class="center-jumbotron">
     <div class="jumbotron w-75 mx-auto animate-jumbotron">
-      <p>JLeague</p>
+      <p>Jeyca Sports</p>
       <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
       <a class="btn btn-lg" href="#" role="button">Lorem, ipsum.</a>
     </div>
   </div>
 
   <div class="socials-container animate-socials">
-    <div class="scroll">
-      <i class="fas fa-angle-down scroll-arrow"></i>
-      <p>Scroll Down</p>
+    <div class="scroll" (click)="onScrollDownClick()">
+      <p> <i class="fas fa-angle-down scroll-arrow"></i> Scroll Down</p>
     </div>
     <div class="socials">
       <i class="fab fa-instagram"></i>

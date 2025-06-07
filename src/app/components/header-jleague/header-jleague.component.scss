@@ -68,7 +68,7 @@
     font-size: 1rem;
 
     &:hover {
-      color: #FFBF66 !important;
+      color: var(--crimson-red) !important;
     }
 
     &.disabled {
@@ -267,11 +267,25 @@
       font-size: 1.2rem;
       color: white;
       animation: upDown 2s ease-in-out infinite;
+      cursor: pointer;
     }
 
     p {
       font-size: 1rem;
+      cursor: pointer;
     }
+
+    .scroll-arrow,
+    p {
+      color: white;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:active {
+        color: var(--crimson-red);
+      }
+    }
+
   }
 
   .socials {
