@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -14,6 +14,7 @@ export class HeaderJleagueComponent {
   isNavbarDark = false;
   isSidenavOpen = false;
   isDropdownOpen = false;
+   @Output() scrollDownClick = new EventEmitter<void>();
 
   toggleSidenav(): void {
     this.isSidenavOpen = !this.isSidenavOpen;
@@ -42,6 +43,18 @@ export class HeaderJleagueComponent {
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+onScrollDownClick(): void {
+  const element = document.querySelector('app-table-league');
+  if (element) {
+    const top = element.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: top - 120,
+      behavior: 'smooth',
+    });
+  }
+}
+
 
   private toggleBodyScroll(): void {
     const shouldBlockScroll = window.innerWidth < 990 && this.isSidenavOpen;

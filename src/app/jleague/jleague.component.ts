@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class JLeagueComponent {
 
+   scrollToTableLeague() {
+    const element = document.getElementById('table-league-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
