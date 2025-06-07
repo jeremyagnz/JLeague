@@ -3,7 +3,7 @@
 [![Deploy on Netlify](https://img.shields.io/badge/Deployed-Netlify-blueviolet)](https://jleague.netlify.app)  
 [![Backend API - Render](https://img.shields.io/badge/API%20Mock-Render-blue)](https://db-jleague-mock.onrender.com)  
 [![Author: Jeremy Arias](https://img.shields.io/badge/Author-Jeremy%20Arias-orange)](https://github.com/jeremyagnz)
-
+[![Author: Carlos F Diaz](https://img.shields.io/badge/Author-Carlos%20Diaz-yellow)](https://github.com/carlosfdiazsanchez)
 ---
 
 ## 🧠 Descripción
