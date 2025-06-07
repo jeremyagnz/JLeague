@@ -5,7 +5,8 @@
 }
 
 .table__tittle {
-  background-color: #FFBF66;
+  background-color: var(--crimson-red);
+  color: var(--white-smoke);
 }
 
 .fade-in-up {
@@ -20,7 +21,7 @@
 
 .table tbody tr:hover > th,
 .table tbody tr:hover > td {
-  background-color: #f5c98fbd;
+  background-color: rgb(161, 161, 161);
   color: rgb(54, 40, 40);
   cursor: pointer;
   transition: background-color 0.3s ease;
